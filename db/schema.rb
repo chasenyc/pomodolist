@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219220510) do
+ActiveRecord::Schema.define(version: 20160219221255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "todos", force: :cascade do |t|
-    t.integer "user_id",                      null: false
-    t.string  "title",                        null: false
-    t.integer "pom_estimate",                 null: false
-    t.integer "pom_total",    default: 0,     null: false
-    t.boolean "completed",    default: false, null: false
+    t.integer  "user_id",                      null: false
+    t.string   "title",                        null: false
+    t.integer  "pom_estimate",                 null: false
+    t.integer  "pom_total",    default: 0,     null: false
+    t.boolean  "completed",    default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "todos", ["user_id"], name: "index_todos_on_user_id", using: :btree
