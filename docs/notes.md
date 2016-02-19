@@ -12,6 +12,7 @@ session_token   | string    | not null, indexed, unique
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+user_id         | integer   | not null, foreign key
 title           | string    | not null
 pom_estimate    | integer   | not null
 pom_total       | integer   | not null, default 0
