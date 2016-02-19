@@ -13,7 +13,7 @@ export default class Header extends React.Component {
       <header className="header">
         <nav className="header-nav">
           <div id="logo">pomodolist</div>
-          
+
         </nav>
       </header>
     )

@@ -13,8 +13,8 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 title           | string    | not null
-estimate        | integer   | not null
-total           | integer   | not null, default 0
+pom_estimate    | integer   | not null
+pom_total       | integer   | not null, default 0
 completed       | boolean   | not null, default false
 
 
