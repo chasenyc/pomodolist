@@ -1,13 +1,15 @@
-var React = require("react");
+"use strict";
+import React from 'react';
 
-class App extends Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   render() {
     return (
       <div>Test</div>
-    );
+    )
   }
 }

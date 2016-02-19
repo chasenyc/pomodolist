@@ -1,13 +1,20 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
-var Router = require("react-router").Router;
-var Route = require("react-router").Route;
-var IndexRoute = require("react-router").IndexRoute;
-var IndexRedirect = require("react-router").IndexRedirect;
-var createHistory = require("history").createHistory;
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var App = require("./components/app");
+import {
+  Router, Route, browserHistory,
+  IndexRoute, IndexRedirect
+} from 'react-router';
+
+import App from './components/app';
+
+var routes = (
+  <Router history={browserHistory}>
+    <Route name="app" path="/" component={App}>
+    </Route>
+  </Router>
+);
 
 document.addEventListener("DOMContentLoaded", function () {
-  ReactDOM.render(<App />, document.getElementById('content'));
+  ReactDOM.render(routes, document.getElementById('content'));
 });
