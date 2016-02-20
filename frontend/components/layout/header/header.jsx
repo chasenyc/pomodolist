@@ -12,8 +12,11 @@ export default class Header extends React.Component {
     return (
       <header className="header">
         <nav className="header-nav">
-          <div id="logo">pomodolist</div>
-
+          <div className="header-logo-container">
+            <a href="/">
+              <div className="logo"></div>
+            </a>
+          </div>
         </nav>
       </header>
     )
