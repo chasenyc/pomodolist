@@ -1,7 +1,7 @@
 "use strict";
 import React from 'react';
 
-export default class Dashboard extends React.Component {
+export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,8 +10,9 @@ export default class Dashboard extends React.Component {
   render() {
 
     return (
-      <div>
-        Dashboard
+      <div className="home">
+        <h1>Home</h1>
+        
       </div>
     )
   }

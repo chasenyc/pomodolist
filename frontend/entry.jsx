@@ -7,13 +7,13 @@ import {
 } from 'react-router';
 
 import App from './components/app';
-import Dashboard from './components/layout/dashboard/dashboard';
+import Home from './components/layout/home/home';
 import SignIn from './components/user/signin';
 
 var routes = (
   <Router history={ browserHistory }>
     <Route name="app" path="/" component={ App }>
-      <IndexRoute component={ Dashboard } />
+      <IndexRoute component={ Home } />
       <Route path="signin" component={ SignIn } />
     </Route>
   </Router>
