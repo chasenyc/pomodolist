@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 import {
   Router, Route, browserHistory,
@@ -7,17 +7,18 @@ import {
 } from 'react-router';
 
 import App from './components/app';
+import Dashboard from './components/layout/dashboard/dashboard';
 import SignIn from './components/user/signin';
 
 var routes = (
-  <Router history={browserHistory}>
-    <Route name="app" path="/" component={App}>
+  <Router history={ browserHistory }>
+    <Route name="app" path="/" component={ App }>
+      <IndexRoute component={ Dashboard } />
       <Route path="signin" component={ SignIn } />
     </Route>
   </Router>
 );
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log('loaded.');
-  ReactDOM.render(routes, document.getElementById('content'));
+  render(routes, document.getElementById('content'));
 });

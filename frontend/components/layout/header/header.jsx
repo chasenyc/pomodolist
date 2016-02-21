@@ -1,6 +1,6 @@
 "use strict";
 import React from 'react';
-
+import { Link } from 'react-router';
 
 
 export default class Header extends React.Component {
@@ -15,9 +15,9 @@ export default class Header extends React.Component {
       <header className="header">
         <nav className="header-nav">
           <div className="header-logo-container">
-            <a href="/">
+            <Link to={"/"}>
               <div className="logo"></div>
-            </a>
+            </Link>
           </div>
         </nav>
       </header>
