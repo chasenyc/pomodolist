@@ -35,7 +35,6 @@ const CurrentUserStore = Object.assign(EventEmitter.prototype, {
     switch(action.actionType){
       case AppConstants.RECEIVE_USER:
         _currentUser = action.user;
-        console.log(_currentUser);
         break;
     }
     CurrentUserStore.emitChange();

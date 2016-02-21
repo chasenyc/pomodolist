@@ -10,7 +10,7 @@ export default {
         AppActions.receiveUser(user);
       }
     });
-  }
+  },
 
   logout(userData) {
     return $.ajax({
@@ -21,7 +21,7 @@ export default {
         AppActions.receiveUser(user);
       }
     });
-  }
+  },
 
   fetchCurrentUser() {
     return $.ajax({
