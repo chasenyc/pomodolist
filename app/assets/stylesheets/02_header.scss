@@ -27,3 +27,20 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.right-side {
+  float: right;
+}
+
+.nav-button {
+  padding: 5px;
+  text-align: center;
+  line-height: 28px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.nav-button.button-accent {
+  background: #5E841B;
+  color: #fff;
+}

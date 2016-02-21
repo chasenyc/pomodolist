@@ -27,10 +27,6 @@ const CurrentUserStore = Object.assign(EventEmitter.prototype, {
     return (typeof _currentUser.id !== "undefined");
   },
 
-  _setUser(user) {
-    _currentUser = user;
-  },
-
   dispatcherIndex: register( function (action) {
     switch(action.actionType){
       case AppConstants.RECEIVE_USER:

@@ -14,7 +14,7 @@ export default class App extends React.Component {
   getStateFromStore() {
     return {
       user: CurrentUserStore.currentUser(),
-      loggedIn: CurrentUserStore.isLoggedIn()
+      isLoggedIn: CurrentUserStore.isLoggedIn()
     };
   }
 
@@ -41,10 +41,5 @@ export default class App extends React.Component {
     return React.Children.map(this.props.children, function(child) {
       return React.cloneElement(child, this.state);
     }, this);
-  }
-
-  _onChange() {
-    console.log(this);
-    this.setState(this.getStateFromStore());
   }
 }
