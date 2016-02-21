@@ -12,10 +12,9 @@ class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credentials(
-      params[:email],
-      params[:password]
+      user_params[:username],
+      user_params[:password]
     )
-
     if @user.nil?
       render json: "The credentials provided did not match any users in our records.", status: 401
     else
@@ -27,6 +26,11 @@ class Api::SessionsController < ApplicationController
   def destroy
     sign_out!
     render json: {}
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:username, :password)
   end
 
 end

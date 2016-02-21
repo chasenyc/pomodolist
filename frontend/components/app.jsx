@@ -9,6 +9,10 @@ export default class App extends React.Component {
     this.state = {};
   }
 
+  componentWillReceiveProps() {
+    console.log('test');
+  }
+
   render() {
     return (
       <div>
