@@ -34,32 +34,36 @@ export default class SignIn extends React.Component {
           className="sign-in-form"
           onSubmit={ this.submit.bind(this) }>
           <h1 className="user-form-header">Sign In</h1>
-          <p className="flash-notice">{this.state.flash}</p>
-            <label>Username:</label>
-            <input
-              type="text"
-              name="username"
-              placeholder="username"
-              value={ this.state.username }
-              onChange={
-                (e) => { this.setState( {username: e.target.value} ) }
-              } />
-            <label>Password:</label>
-            <input type="password"
-              name="password"
-              placeholder="password"
-              value={ this.state.password }
-              onChange={
-                (e) => { this.setState( {password: e.target.value} ) }
-              } />
-            <p>
-              <span></span>
-            </p>
-            <div className="btn-holder">
-              <button className="btn large">Sign In</button>
+          <div className="user-form-body">
+            <p className="flash-notice">{this.state.flash}</p>
+            <div className="user-form-inputs">
+              <label>Username:</label>
+              <input
+                type="text"
+                name="username"
+                placeholder="username"
+                value={ this.state.username }
+                onChange={
+                  (e) => { this.setState( {username: e.target.value} ) }
+                } />
+              <label>Password:</label>
+              <input type="password"
+                name="password"
+                placeholder="password"
+                value={ this.state.password }
+                onChange={
+                  (e) => { this.setState( {password: e.target.value} ) }
+                } />
+              <p>
+                <span></span>
+              </p>
+              <div className="btn-holder">
+                <button className="btn large">Sign In</button>
+              </div>
+              Or if you do not have an account&nbsp;
+              <Link to={"/register"} className="display-link">register.</Link>
             </div>
-            Or if you do not have an account&nbsp;
-            <Link to={"/register"} className="display-link">register.</Link>
+          </div>
         </form>
       </div>
     )
