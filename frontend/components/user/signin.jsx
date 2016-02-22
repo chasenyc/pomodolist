@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 import AppConstants from '../../constants/app_constants';
 import SessionAPIUtils from '../../utils/session_api_utils';
@@ -15,7 +15,7 @@ export default class SignIn extends React.Component {
   }
 
   componentWillReceiveProps() {
-    console.log(this.props);
+    this._isUserLoggedIn();
   }
 
   submit(e) {
@@ -59,13 +59,15 @@ export default class SignIn extends React.Component {
               <button className="btn large">Sign In</button>
             </div>
             Or if you do not have an account&nbsp;
-            <Link to={"/register"} className="display-link">sign up.</a>
+            <Link to={"/register"} className="display-link">register.</Link>
         </form>
       </div>
     )
   }
 
   _isUserLoggedIn() {
-
+    if (CurrentUserStore.isLoggedIn()) {
+      browserHistory.push('/');
+    }
   }
 }
