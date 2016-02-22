@@ -12,6 +12,7 @@ export default class Home extends React.Component {
 
   componentWillReceiveProps() {
     this._isUserLoggedIn();
+    console.log(this.props);
   }
 
   render() {

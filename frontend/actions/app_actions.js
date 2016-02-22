@@ -6,5 +6,11 @@ export default {
     dispatch({
       actionType: AppConstants.RECEIVE_USER, user
     })
+  },
+
+  receiveTodos(todos){
+    dispatch({
+      actionType: AppConstants.RECEIVE_TODOS, todos
+    })
   }
 }
