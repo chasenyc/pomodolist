@@ -36,6 +36,10 @@
   margin-bottom: 5px;
 }
 
-.user-form-inputs input, label, button {
+.user-form-inputs input, label {
+  width: 100%;
+}
+
+.btn.large {
   width: 100%;
 }
