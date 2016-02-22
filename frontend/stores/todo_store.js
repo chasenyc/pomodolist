@@ -23,10 +23,26 @@ const TodoStore = Object.assign(EventEmitter.prototype, {
     return _todos.slice(0);
   },
 
+  addTodo(newTodo) {
+    var found = false;
+    _todos.forEach((todo) => {
+      if (todo.id === newTodo.id) {
+        _todos[_todos.indexOf(todo)] = newTodo;
+        found = true;
+      }
+      if (!found) {
+        _todos.push(newTodo);
+      }
+    });
+  },
+
   dispatcherIndex: register( function (action) {
     switch(action.actionType){
       case AppConstants.RECEIVE_TODOS:
         _todos = action.todos;
+        break;
+      case AppConstants.RECEIVE_TODO:
+        TodoStore.addTodo(action.todo);
         break;
     }
     TodoStore.emitChange();

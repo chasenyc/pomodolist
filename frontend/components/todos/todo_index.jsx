@@ -14,8 +14,8 @@ export default class TodoIndex extends React.Component {
 
     return (
       <div className="home-box">
-        <h3>Todo Items</h3>
-        <ul>
+        <h3>{ this._title() }</h3>
+        <ul className="todo-list">
           { this._todoItems() }
         </ul>
       </div>
@@ -24,7 +24,22 @@ export default class TodoIndex extends React.Component {
 
   _todoItems() {
     return this.props.todos.map((todo) => {
-      return <TodoIndexItem key={ 'k' + todo.id } todo={ todo } />
+      if (todo.completed === this.props.view) {
+        return (
+          <TodoIndexItem
+            key={ 'k' + todo.id }
+            todo={ todo }
+            mark={ !this.props.view } />
+        )
+      }
     });
+  }
+
+  _title() {
+    if (this.props.view) {
+      return 'Completed Todos'
+    } else {
+      return 'Active Todos'
+    }
   }
 }

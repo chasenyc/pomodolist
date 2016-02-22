@@ -15,7 +15,7 @@ export default {
       url: 'api/todos/' + id,
       type: 'PUT',
       data: {todo: {completed: value}},
-      success: (todo) => {  }
+      success: (todo) => { AppActions.receiveTodo(todo) }
     })
   }
 

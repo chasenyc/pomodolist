@@ -20,7 +20,8 @@ export default class Home extends React.Component {
     return (
       <div className="home">
         <h1>Home</h1>
-        <TodoIndex {...this.state} {...this.props} />
+        <TodoIndex {...this.state} {...this.props} view={ false }/>
+        <TodoIndex {...this.state} {...this.props} view={ true }/>
       </div>
     )
   }

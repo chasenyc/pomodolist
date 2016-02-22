@@ -12,10 +12,13 @@ export default class TodoIndexItem extends React.Component {
   render() {
 
     return (
-      <li className="todo-list-item">
+      <li className={ this._liStyle() }>
         <button
           onClick={ () => {
-            TodoAPIUtils.markTodo(this.props.todo.id, true)
+            TodoAPIUtils.markTodo(
+              this.props.todo.id,
+              this.props.mark
+            )
           } }
           className="icon todo-item-done"></button>
         {this.props.todo.title}
@@ -24,4 +27,11 @@ export default class TodoIndexItem extends React.Component {
     )
   }
 
+  _liStyle() {
+    if (!this.props.mark) {
+      return 'todo-list-item complete'
+    } else {
+      return 'todo-list-item'
+    }
+  }
 }

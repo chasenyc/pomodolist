@@ -1,16 +1,34 @@
 .todo-item-done {
   border: 1px solid #999;
   border-radius: 2px;
+  background: #fff;
   height: 10px;
   display: inline-block;
   width: 10px;
   top: -1px;
-  margin-bottom: 3px;
+  margin: 5px;
   position: relative;
-  margin-right: 5px;
 }
 
 .todo-item-done:hover {
   border: 1px solid #000;
   cursor: pointer;
+}
+
+ul.todo-list > li {
+  margin: 5px;
+}
+
+ul.todo-list > li:hover {
+  background: #eee;
+}
+
+.todo-list-item {
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.todo-list-item.complete {
+  color: #999;
+  text-decoration: line-through;
 }
