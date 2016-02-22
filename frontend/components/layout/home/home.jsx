@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, browserHistory } from 'react-router';
 
 import CurrentUserStore from '../../../stores/current_user_store';
+import TodoIndex from '../../todos/todo_index';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ export default class Home extends React.Component {
 
   componentWillReceiveProps() {
     this._isUserLoggedIn();
-    console.log(this.props);
   }
 
   render() {
@@ -20,7 +20,7 @@ export default class Home extends React.Component {
     return (
       <div className="home">
         <h1>Home</h1>
-
+        <TodoIndex {...this.state} {...this.props} />
       </div>
     )
   }

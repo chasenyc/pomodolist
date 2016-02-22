@@ -12,5 +12,11 @@ export default {
     dispatch({
       actionType: AppConstants.RECEIVE_TODOS, todos
     })
+  },
+
+  receiveTodo(todo){
+    dispatch({
+      actionType: AppConstants.RECEIVE_TODO, todo
+    })
   }
 }

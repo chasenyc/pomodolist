@@ -8,5 +8,15 @@ export default {
       dataType: 'json',
       success: (todos) => { AppActions.receiveTodos(todos) }
     });
+  },
+
+  markTodo(id, value) {
+    return $.ajax({
+      url: 'api/todos/' + id,
+      type: 'PUT',
+      data: {todo: {completed: value}},
+      success: (todo) => {  }
+    })
   }
+
 }

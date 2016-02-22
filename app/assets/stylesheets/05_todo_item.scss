@@ -1,0 +1,16 @@
+.todo-item-done {
+  border: 1px solid #999;
+  border-radius: 2px;
+  height: 10px;
+  display: inline-block;
+  width: 10px;
+  top: -1px;
+  margin-bottom: 3px;
+  position: relative;
+  margin-right: 5px;
+}
+
+.todo-item-done:hover {
+  border: 1px solid #000;
+  cursor: pointer;
+}
