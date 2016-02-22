@@ -32,7 +32,10 @@ export default class Header extends React.Component {
         <div>
           <button
             className="nav-button right-side"
-            onClick={ () => { SessionAPIUtils.logout() } }>
+            onClick={ () => {
+              SessionAPIUtils.logout();
+              browserHistory.push('/signin');
+            } }>
             Log out</button>
         </div>
       )
