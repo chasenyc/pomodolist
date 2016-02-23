@@ -41,6 +41,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
+  gem 'sprockets_better_errors'
 end
 
 group :test do
@@ -58,5 +59,4 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'sprockets_better_errors'
 end
