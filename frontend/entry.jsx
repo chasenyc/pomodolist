@@ -22,5 +22,5 @@ var routes = (
 );
 
 document.addEventListener("DOMContentLoaded", function () {
-  ReactDOM.render(routes, document.getElementById('content'));
+  render(routes, document.getElementById('content'));
 });
