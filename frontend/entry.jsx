@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { ReactDOM, render } from 'react-dom';
 
 import {
   Router, Route, browserHistory,
@@ -22,5 +22,5 @@ var routes = (
 );
 
 document.addEventListener("DOMContentLoaded", function () {
-  render(routes, document.getElementById('content'));
+  ReactDOM.render(routes, document.getElementById('content'));
 });
