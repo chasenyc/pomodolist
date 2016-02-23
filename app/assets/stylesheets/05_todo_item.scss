@@ -2,10 +2,10 @@
   border: 1px solid #999;
   border-radius: 2px;
   background: #fff;
-  height: 10px;
+  height: 14px;
+  width: 14px;
   display: inline-block;
-  width: 10px;
-  top: -1px;
+  top: 2px;
   margin: 5px;
   position: relative;
 }
@@ -52,5 +52,28 @@ ul.todo-list > li:hover {
   background-size: contain;
   margin: 0 6px 0 2px;
   position: relative;
-  top: 2px;
+  top: 4px;
+  cursor: default;
+}
+
+.todo-item-delete {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background-size: 100%;
+  background: image-url("trash_under.png"), no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 6px 0 2px;
+  position: relative;
+  top: 4px;
+}
+
+.todo-item-delete:hover {
+  cursor: pointer;
+  background: image-url("trash.png"), no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
