@@ -21,6 +21,7 @@ export default class TodoForm extends React.Component {
 
   submit(e) {
     e.preventDefault();
+    if (this.state.title === '' || this.state.pom_estimate === '') { return; }
     TodoAPIUtils.createTodo({
       title: this.state.title,
       pom_estimate: this.state.pom_estimate,

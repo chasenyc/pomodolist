@@ -23,8 +23,10 @@ export default class TodoIndexItem extends React.Component {
           } }
           className="icon todo-item-done"></button>
         {this.props.todo.pom_total}
-        <div className='pom-icon'></div>
-        {this.props.todo.title}
+        <div title='completed pomodoros' className='pom-icon'></div>
+        <span title={this.props.todo.title}>
+          {this.props.todo.title}
+        </span>
         <button
           className="icon todo-item-delete"></button>
       </li>
