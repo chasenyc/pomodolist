@@ -7,11 +7,12 @@ class Api::TodosController < ApplicationController
   end
 
   def index
-    @todos = current_user.todos
+    @todos = current_user.todos.order("updated_at DESC")
   end
 
   def create
     @todo = Todo.new(todo_params)
+    @todo.user = current_user
     if @todo.save
       render 'show'
     else

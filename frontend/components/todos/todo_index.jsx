@@ -23,11 +23,12 @@ export default class TodoIndex extends React.Component {
   }
 
   _todoItems() {
+    var key = (this.props.view ? 'm' : 'k')
     return this.props.todos.map((todo) => {
       if (todo.completed === this.props.view) {
         return (
           <TodoIndexItem
-            key={ 'k' + todo.id }
+            key={ key + todo.id }
             todo={ todo }
             mark={ !this.props.view } />
         )

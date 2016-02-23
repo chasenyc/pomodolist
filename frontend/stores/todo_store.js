@@ -30,10 +30,10 @@ const TodoStore = Object.assign(EventEmitter.prototype, {
         _todos[_todos.indexOf(todo)] = newTodo;
         found = true;
       }
-      if (!found) {
-        _todos.push(newTodo);
-      }
     });
+    if (!found) {
+      _todos.unshift(newTodo);
+    }
   },
 
   dispatcherIndex: register( function (action) {

@@ -16,7 +16,14 @@
 }
 
 ul.todo-list > li {
-  margin: 5px;
+  margin: 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  padding-bottom: 5px;
+  border-bottom: .5px solid #ccc;
 }
 
 ul.todo-list > li:hover {
@@ -26,9 +33,24 @@ ul.todo-list > li:hover {
 .todo-list-item {
   cursor: pointer;
   font-weight: 300;
+  font-size: 14px;
 }
 
 .todo-list-item.complete {
   color: #999;
   text-decoration: line-through;
+}
+
+.pom-icon {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background-size: 100%;
+  background: image-url("pomodoicon.png"), no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 6px 0 2px;
+  position: relative;
+  top: 2px;
 }

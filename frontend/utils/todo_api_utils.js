@@ -17,6 +17,15 @@ export default {
       data: {todo: {completed: value}},
       success: (todo) => { AppActions.receiveTodo(todo) }
     })
+  },
+
+  createTodo(todoData) {
+    return $.ajax({
+      url: "/api/todos",
+      type: "POST",
+      data: {todo: todoData},
+      success: (todo) => { AppActions.receiveTodo(todo) }
+    });
   }
 
 }

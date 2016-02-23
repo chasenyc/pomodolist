@@ -4,6 +4,8 @@ import { Link, browserHistory } from 'react-router';
 
 import CurrentUserStore from '../../../stores/current_user_store';
 import TodoIndex from '../../todos/todo_index';
+import TodoForm from '../../todos/todo_form';
+import AddBox from '../../todos/add_box';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -20,8 +22,9 @@ export default class Home extends React.Component {
     return (
       <div className="home">
         <h1>Home</h1>
-        <TodoIndex {...this.state} {...this.props} view={ false }/>
-        <TodoIndex {...this.state} {...this.props} view={ true }/>
+        <AddBox {...this.state} {...this.props} />
+        <TodoIndex key={'active'} {...this.state} {...this.props} view={ false }/>
+        <TodoIndex key={'completed'} {...this.state} {...this.props} view={ true }/>
       </div>
     )
   }
