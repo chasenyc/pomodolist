@@ -30,6 +30,7 @@ export default class PomodoroForm extends React.Component {
         })
         break;
       case 'pomo':
+        this.pomodoroNotification();
         this.setState({
           pomodoro: 'none',
           time: 0,
@@ -38,6 +39,10 @@ export default class PomodoroForm extends React.Component {
         });
         break;
     }
+  }
+
+  pomodoroNotification() {
+    var notification = new Notification('pomodolist', { body: 'your pomodoro is complete!!' });
   }
 
   stopTimer() {

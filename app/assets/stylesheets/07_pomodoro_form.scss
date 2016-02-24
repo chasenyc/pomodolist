@@ -30,3 +30,12 @@
 .pomodoro-form > button:hover {
   cursor: pointer;
 }
+
+.pomodoro-form-timer {
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: .5px solid #ccc;
+  background: #999;
+  color: #333;
+}
