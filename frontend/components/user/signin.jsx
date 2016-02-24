@@ -60,6 +60,18 @@ export default class SignIn extends React.Component {
               <div className="btn-holder">
                 <button className="btn large">Sign In</button>
               </div>
+              <div className="btn-holder">
+                <button
+                  onClick={ (e) => {
+                      e.preventDefault();
+                      SessionAPIUtils.login({
+                        username: 'mark',
+                        password: 'reallySecure'
+                      });
+                    }
+                  }
+                  className="btn large">View Demo Account</button>
+              </div>
               Or if you do not have an account&nbsp;
               <Link to={"/register"} className="display-link">register.</Link>
             </div>
