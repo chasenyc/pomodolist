@@ -8,6 +8,7 @@ Pomodolist was created with a rails backend and a react frontend utilizing the f
 - [x] Users can create accounts and login
 - [x] Users can create todos with a pomodoro count estimate
 - [x] Users can select a todo and start a pomodoro
+- [x] Naively implemented browser notification for pomodoro completion
 
 ## Future Features
 * [ ] Error feedback, due to time constraints giving users feedback about missing information or bad credentials was put on a back burner.
