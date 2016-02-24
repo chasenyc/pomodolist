@@ -16,8 +16,16 @@ export default class App extends React.Component {
     return {
       user: CurrentUserStore.currentUser(),
       isLoggedIn: CurrentUserStore.isLoggedIn(),
-      todos: TodoStore.all()
+      todos: TodoStore.all(),
+      setWidth: this.setWidth.bind(this),
+      progress: 0
     };
+  }
+
+  setWidth(width) {
+    this.setState({
+      progress: width
+    })
   }
 
   componentDidMount() {
@@ -33,9 +41,18 @@ export default class App extends React.Component {
   }
 
   render() {
+    var progressStyle = {
+      width: this.state.progress + "%"
+    }
     return (
       <div>
         <Header {...this.state} />
+        <div className="progress-bar-total">
+          <div
+            style={ progressStyle }
+            className="progress-bar-current">
+          </div>
+        </div>
         {this._children()}
       </div>
     )

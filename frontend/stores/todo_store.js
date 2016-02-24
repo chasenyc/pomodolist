@@ -23,6 +23,16 @@ const TodoStore = Object.assign(EventEmitter.prototype, {
     return _todos.slice(0);
   },
 
+  pomTotal(id) {
+    var result;
+    _todos.forEach((todo) => {
+      if (todo.id === id) {
+        result = todo.pom_total;
+      }
+    })
+    return result || 0;
+  },
+
   addTodo(newTodo) {
     var found = false;
     _todos.forEach((todo) => {

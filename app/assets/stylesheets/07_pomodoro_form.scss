@@ -13,6 +13,11 @@
   border: .5px solid #ccc;
 }
 
+.pomodoro-select:disabled {
+  background: #eee;
+  color: #666;
+}
+
 .pomodoro-form > button {
   width: 100%;
   background: #5E841B;

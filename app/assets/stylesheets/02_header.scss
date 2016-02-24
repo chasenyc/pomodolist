@@ -49,3 +49,19 @@
   background: #5E841B;
   color: #fff;
 }
+
+.progress-bar-total {
+  left: 0;
+  right: 0;
+  height: 3px;
+  top: 49px;
+  position: fixed;
+  z-index: 10;
+}
+
+.progress-bar-current {
+  left: 0;
+  height: 3px;
+  z-index: 10;
+  background: #D1351D;
+}

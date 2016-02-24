@@ -26,6 +26,15 @@ export default {
       data: {todo: todoData},
       success: (todo) => { AppActions.receiveTodo(todo) }
     });
+  },
+
+  addPomodo(id, amount) {
+    return $.ajax({
+      url: 'api/todos/' + id,
+      type: 'PUT',
+      data: {todo: {pom_total: amount}},
+      success: (todo) => { AppActions.receiveTodo(todo) }
+    })
   }
 
 }
