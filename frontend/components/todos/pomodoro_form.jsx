@@ -4,6 +4,9 @@ import { Link, browserHistory } from 'react-router';
 import TodoAPIUtils from '../../utils/todo_api_utils';
 import TodoStore from '../../stores/todo_store';
 
+const POMO_TIME = 15000;
+const INTERVAL = 20;
+
 export default class PomodoroForm extends React.Component {
   constructor(props) {
     super(props);
@@ -15,53 +18,51 @@ export default class PomodoroForm extends React.Component {
     };
   }
 
-  handleClick() {
+  startTimer() {
+    this.stopTimer();
     if (this.state.todo === '') { return; }
     switch(this.state.pomodoro) {
       case 'none':
         this.setState({
           pomodoro: 'pomo',
-          time: 15000,
-          interval: setInterval(this.updateTime.bind(this), 50)
+          time: POMO_TIME,
+          interval: setInterval(this.updateTime.bind(this), INTERVAL)
         })
         break;
       case 'pomo':
-        this.stopTimer();
-        break;
-      case 'break':
-        this.stopTimer();
+        this.setState({
+          pomodoro: 'none',
+          time: 0,
+          interval: '',
+          todo: ''
+        });
         break;
     }
   }
 
   stopTimer() {
+    if (this.state.interval === '') { return; }
     clearInterval(this.state.interval);
     this.props.setWidth(0);
     this.setState({
-      pomodoro: 'none',
       time: 0
     })
   }
 
   updateTime() {
-    var newTime = this.state.time - 50;
+    var newTime = this.state.time - INTERVAL;
     if (newTime < 0) {
-      switch(this.state.pomodoro) {
-        case 'pomo':
-          var todo = parseInt(this.state.todo);
-          var amount = parseInt(TodoStore.pomTotal(todo)) + 1;
-          TodoAPIUtils.addPomodo(todo, amount);
-          this.stopTimer();
-          break;
-        case 'break':
-
-          break;
+      if (this.state.pomodoro === 'pomo') {
+        var todo = parseInt(this.state.todo);
+        var amount = parseInt(TodoStore.pomTotal(todo)) + 1;
+        TodoAPIUtils.addPomodo(todo, amount);
+        this.startTimer();
       }
     }
     this.setState({
       time: newTime
     })
-    var percent = 100 - ((newTime / 15000) * 100);
+    var percent = 100 - ((newTime / POMO_TIME) * 100);
     this.props.setWidth(percent);
   }
 
@@ -94,7 +95,7 @@ export default class PomodoroForm extends React.Component {
         <label>Choose a todo:
           <select
             disabled={this.state.time <= 0 ? false : true }
-            defaultValue=""
+            value={ this.state.todo }
             onChange={ this.selectChange.bind(this) }
             className="pomodoro-select">
             <option value="" disabled>select a todo</option>
@@ -105,7 +106,7 @@ export default class PomodoroForm extends React.Component {
           { this.renderTime() }
         </div>
         <button
-          onClick={ this.handleClick.bind(this) }
+          onClick={ this.startTimer.bind(this) }
           className={ this._buttonClass() }>
           { this._buttonText() }
         </button>
@@ -121,9 +122,6 @@ export default class PomodoroForm extends React.Component {
       case 'pomo':
         return 'pomodoro-form-button pomo';
         break;
-      case 'break':
-        return 'pomodoro-form-button break';
-        break;
     }
   }
 
@@ -134,9 +132,6 @@ export default class PomodoroForm extends React.Component {
         break;
       case 'pomo':
         return 'Quit Pomodoro';
-        break;
-      case 'break':
-        return 'Finish Break';
         break;
     }
   }
