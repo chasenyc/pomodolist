@@ -35,6 +35,14 @@ export default {
       data: {todo: {pom_total: amount}},
       success: (todo) => { AppActions.receiveTodo(todo) }
     })
+  },
+
+  deleteTodo(id) {
+    return $.ajax({
+      url: 'api/todos/' + id,
+      type: 'DELETE',
+      success: (todo) => { AppActions.receiveTodo(todo) }
+    })
   }
 
 }
