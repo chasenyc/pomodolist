@@ -12,3 +12,16 @@
   font-weight: 300;
   border: .5px solid #ccc;
 }
+
+.pomodoro-form > button {
+  width: 100%;
+  background: #5E841B;
+  text-align: center;
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 4px;
+}
+
+.pomodoro-form > button:hover {
+  cursor: pointer;
+}
