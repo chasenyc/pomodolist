@@ -4,6 +4,7 @@ import { Link, browserHistory } from 'react-router';
 import TodoAPIUtils from '../../utils/todo_api_utils';
 
 import TodoForm from './todo_form';
+import PomodoroForm from './pomodoro_form';
 
 export default class AddBox extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export default class AddBox extends React.Component {
       <div className="home-box">
         <TodoForm {...this.state} {...this.props} />
         <div className="home-box-divider"></div>
+        <PomodoroForm {...this.state} {...this.props} />
       </div>
     )
   }

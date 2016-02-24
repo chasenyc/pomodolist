@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link, browserHistory } from 'react-router';
 import SessionAPIUtils from '../../../utils/session_api_utils';
+import TodoAPIUtils from '../../../utils/todo_api_utils';
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class Header extends React.Component {
           <button
             className="nav-button right-side"
             onClick={ () => {
-              SessionAPIUtils.logout();
+              SessionAPIUtils.logout().then(TodoAPIUtils.fetchTodos());
               browserHistory.push('/signin');
             } }>
             Log out</button>

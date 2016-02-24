@@ -12,7 +12,21 @@ export default class PomodoroForm extends React.Component {
   render() {
 
     return (
-
+      <div className="pomodoro-form">
+        <label>Choose a todo:
+          <select className="pomodoro-select">
+            { this._activeTodos() }
+          </select>
+        </label>
+      </div>
     )
+  }
+
+  _activeTodos() {
+    return this.props.todos.map(function (todo) {
+      if (todo.completed === false) {
+        return (<option key={ todo.id }>{ todo.title }</option>);
+      }
+    });
   }
 }

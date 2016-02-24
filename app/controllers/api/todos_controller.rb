@@ -7,7 +7,11 @@ class Api::TodosController < ApplicationController
   end
 
   def index
-    @todos = current_user.todos.order("updated_at DESC")
+    if logged_in?
+      @todos = current_user.todos.order("updated_at DESC")
+    else
+      render json: []
+    end
   end
 
   def create

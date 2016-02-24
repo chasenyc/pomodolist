@@ -1,4 +1,5 @@
 import AppActions from '../actions/app_actions';
+import TodoAPIUtils from './todo_api_utils';
 
 export default {
   login(userData) {
@@ -8,6 +9,7 @@ export default {
       data: {user: userData},
       success: (user) => {
         AppActions.receiveUser(user);
+        TodoAPIUtils.fetchTodos();
       }
     });
   },
