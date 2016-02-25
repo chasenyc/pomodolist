@@ -1,6 +1,8 @@
 # pomodolist
 *a simple todo list with pomodoro functionality implemented.*
 
+[Live link][1]
+
 Pomodolist was created with a rails backend and a react frontend utilizing the flux architecture. I chose to try and keep the entire project as polished as possible which definitely was a little bit of a drain time-wise away from some user error feedback I would have wished to implement.
 
 ## Features
@@ -13,3 +15,5 @@ Pomodolist was created with a rails backend and a react frontend utilizing the f
 ## Future Features
 * [ ] Error feedback, due to time constraints giving users feedback about missing information or bad credentials was put on a back burner.
 * [ ] Add breaks after the pomodoro
+
+[1]: https://pomodolist.herokuapp.com/

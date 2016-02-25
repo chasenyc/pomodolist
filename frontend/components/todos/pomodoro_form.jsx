@@ -4,7 +4,7 @@ import { Link, browserHistory } from 'react-router';
 import TodoAPIUtils from '../../utils/todo_api_utils';
 import TodoStore from '../../stores/todo_store';
 
-const POMO_TIME = 15000;
+const POMO_TIME = 1500000;
 const INTERVAL = 20;
 
 export default class PomodoroForm extends React.Component {
